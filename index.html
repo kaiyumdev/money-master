@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Money-Transaction</title>
-</head>
-<body>
-    <h1 class="text-center">This is money transaction</h1>
-    <h5 class="text-center">This is money transaction</h5>
-    <h6 class="text-center">This is money transaction</h6>
-    <h2 class="text-center">This is money transaction</h2>
-
-
+  </head>
+  <body>
+    <section class="">
+      <h1>Money Transaction</h1>
+      <section class="main">
+        <div class="money-img">
+          <img src="./images/money.jpg" alt="" />
+        </div>
+        <div class="information">
+            <h3>Income</h3>
+            <label  for="">Income:</label>
+            <input id="income-input" type="text">
+            <h3>Expense</h3>
+            <label for="">Food:</label>
+            <input id="food-input" type="text">
+            <br>
+            <label for="">Rent:</label>
+            <input id="rent-input" type="text">
+            <br>
+            <label for="">Clothes:</label>
+            <input id="clothes-input" type="text">
+            <br>
+            <button id="calculate">Calculate</button>
+            <h3>Total Expense: <span id="total-expense"></span> </h3>
+            <h3>Balance: <span id="balance-input"></span></h3>
+            <label for="">Save:</label>
+            <input type="text">
+            <span>%</span>
+            <button>Save</button>
+            <h3>Saving Amount:</h3>
+            <h3>Remaining Balance:</h3>
+        </div>
+      </section>
+    </section>
 
     <script src="js/transaction.js"></script>
-</body>
+  </body>
 </html>
