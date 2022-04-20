@@ -4,29 +4,37 @@ function getInputValue(inputId) {
   const inputAmountText = inputField.value;
   const amountValue = parseFloat(inputAmountText);
   // clear input field
-  inputField.value = "";
+  // inputField.value = "";
   return amountValue;
 }
 const totalExpenseInput = document.getElementById("total-expense");
 
+// calculate amount
 document.getElementById("calculate").addEventListener("click", function () {
+  const incomeAmount = getInputValue("income-input");
+  if (incomeAmount <= 0 || isNaN(incomeAmount)) {
+    alert("Income must be typeof number and positive value");
+  }
   const foodAmount = getInputValue("food-input");
   const rentAmount = getInputValue("rent-input");
   const clothesAmount = getInputValue("clothes-input");
-  const incomeAmount = getInputValue("income-input");
-  
- 
-  
+  if((foodAmount <= 0 || isNaN(foodAmount)) || (rentAmount <= 0 || isNaN(rentAmount)) || (clothesAmount <= 0 || isNaN(clothesAmount))){
+    alert("Income must be typeof number and positive value");
+  }
   const totalExpenseAmountText = totalExpenseInput.innerText;
   const totalExpenseAmount = parseFloat(totalExpenseAmountText);
   totalExpenseInput.innerText = foodAmount + rentAmount + clothesAmount;
+
+  if (incomeAmount < totalExpenseInput.innerText) {
+    alert("Income can not be less than expense value!!")
+  }
   //   console.log(foodAmount);
 
   const balanceInput = document.getElementById("balance-input");
   const balanceAmountText = balanceInput.innerText;
   const balanceAmount = parseFloat(balanceAmountText);
   console.log(balanceAmount);
-  balanceInput.innerText = (incomeAmount) - (totalExpenseInput.innerText);
+  balanceInput.innerText = incomeAmount - totalExpenseInput.innerText;
   //   console.log(foodAmount);
 
   //   const balanceTotal = incomeAmount - totalExpenseInput.innerText;
@@ -35,7 +43,6 @@ document.getElementById("calculate").addEventListener("click", function () {
 document.getElementById("save-button").addEventListener("click", function () {
   const saveAmount = getInputValue("save-input");
   const incomeAmount = getInputValue("income-input");
-
 
   const savingAmountInput = document.getElementById("saving-amount");
   const savingAmountText = savingAmountInput.innerText;
@@ -54,9 +61,8 @@ document.getElementById("save-button").addEventListener("click", function () {
   // console.log(savingAmountText);
   // console.log(savingAmountInput);
   remainingBalanceInput.innerText =
-   parseFloat(balanceAmount) - parseFloat(savingAmountInput.innerText);
+    parseFloat(balanceAmount) - parseFloat(savingAmountInput.innerText);
 });
-
 
 // first
 
@@ -75,45 +81,45 @@ document.getElementById("save-button").addEventListener("click", function () {
 
 //   expenseElement.innerText = expenseTotal + amount;
 
-  // const totalExpenseInput = document.getElementById("total-expense");
-  // const totalExpenseAmountText = totalExpenseInput.innerText;
-  // const totalExpenseAmount = parseFloat(totalExpenseAmountText);
-  // totalExpenseInput.innerText = foodAmount + rentAmount + clothesAmount;
+// const totalExpenseInput = document.getElementById("total-expense");
+// const totalExpenseAmountText = totalExpenseInput.innerText;
+// const totalExpenseAmount = parseFloat(totalExpenseAmountText);
+// totalExpenseInput.innerText = foodAmount + rentAmount + clothesAmount;
 
-  // second
-    // if (depositAmount > 0) {
-  //   updateTotalField("deposit-total", depositAmount);
-  //   // updateBalance(depositAmount, true);
-  // }
-  // const foodInput = document.getElementById("food-input");
-  // const foodAmountText = foodInput.value;
-  // const foodAmount = parseFloat(foodAmountText);
-  //   console.log(foodAmount);
+// second
+// if (depositAmount > 0) {
+//   updateTotalField("deposit-total", depositAmount);
+//   // updateBalance(depositAmount, true);
+// }
+// const foodInput = document.getElementById("food-input");
+// const foodAmountText = foodInput.value;
+// const foodAmount = parseFloat(foodAmountText);
+//   console.log(foodAmount);
 
-  // const rentInput = document.getElementById("rent-input");
-  // const rentAmountText = rentInput.value;
-  // const rentAmount = parseFloat(rentAmountText);
-  //   console.log(foodAmount);
+// const rentInput = document.getElementById("rent-input");
+// const rentAmountText = rentInput.value;
+// const rentAmount = parseFloat(rentAmountText);
+//   console.log(foodAmount);
 
-  // const clothesInput = document.getElementById("clothes-input");
-  // const clothesAmountText = clothesInput.value;
-  // const clothesAmount = parseFloat(clothesAmountText);
-  //   console.log(foodAmount);
+// const clothesInput = document.getElementById("clothes-input");
+// const clothesAmountText = clothesInput.value;
+// const clothesAmount = parseFloat(clothesAmountText);
+//   console.log(foodAmount);
 
-  // third
-  // const incomeInput = document.getElementById("income-input");
-  // const incomeAmountText = incomeInput.value;
-  // const incomeAmount = parseFloat(incomeAmountText);
-  //   console.log(foodAmount);
+// third
+// const incomeInput = document.getElementById("income-input");
+// const incomeAmountText = incomeInput.value;
+// const incomeAmount = parseFloat(incomeAmountText);
+//   console.log(foodAmount);
 
-  // fourth
+// fourth
 
-    // const saveInput = document.getElementById("save-input");
-  // const saveAmountText = saveInput.value;
-  // const saveAmount = parseFloat(saveAmountText);
-  // //   console.log(foodAmount);
-  // const incomeInput = document.getElementById("income-input");
-  // const incomeAmountText = incomeInput.value;
-  // const incomeAmount = parseFloat(incomeAmountText);
-  //   console.log(incomeAmount);
-  // get saving amount
+// const saveInput = document.getElementById("save-input");
+// const saveAmountText = saveInput.value;
+// const saveAmount = parseFloat(saveAmountText);
+// //   console.log(foodAmount);
+// const incomeInput = document.getElementById("income-input");
+// const incomeAmountText = incomeInput.value;
+// const incomeAmount = parseFloat(incomeAmountText);
+//   console.log(incomeAmount);
+// get saving amount
