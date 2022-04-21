@@ -128,28 +128,28 @@ h1 {
     padding-bottom: 5em;
   }
   #income-input {
-    padding: 20px 100px;
+    padding: 10px 50px;
     background-color: gray;
     color: white;
     margin: 2em;
     /* margin-left: 5px; */
   }
   #food-input {
-    padding: 20px 100px;
+    padding: 10px 50px;
     margin: 2em;
     /* margin: 0 0 20px 24px; */
     background-color: gray;
     color: white;
   }
   #rent-input {
-    padding: 20px 100px;
+    padding: 10px 50px;
     margin: 2em;
     /* margin: 0 0 20px 26px; */
     background-color: gray;
     color: white;
   }
   #clothes-input {
-    padding: 20px 100px;
+    padding: 10px 50px;
     margin: 2em;
     /* margin: 10px 0 20px 5px; */
     background-color: gray;
